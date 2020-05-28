@@ -17,24 +17,24 @@ class PersonalAccessClient extends \ItAces\ORM\Entities\EntityBase implements Un
 {
 
     /**
-     * @var integer
+     * @var \ItAces\Oauth\Entities\Client
      */
-    protected $clientId;
-    
+    protected $client;
+
     /**
-     * @return integer
+     * @return \ItAces\Oauth\Entities\Client
      */
-    public function getClientId()
+    public function getClient()
     {
-        return $this->clientId;
+        return $this->client;
     }
 
     /**
-     * @param number $clientId
+     * @param \ItAces\Oauth\Entities\Client $client
      */
-    public function setClientId($clientId)
+    public function setClient($client)
     {
-        $this->clientId = $clientId;
+        $this->client = $client;
     }
 
     public static function getRequestValidationRules()

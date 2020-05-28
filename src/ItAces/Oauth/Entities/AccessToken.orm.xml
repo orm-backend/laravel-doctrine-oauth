@@ -14,19 +14,19 @@
 			<unique-constraint name="oauth_access_tokens_primary_unique" columns="primary"/>
 	    </unique-constraints>
 		<field name="primary" type="string" column="primary" length="100" nullable="false" />
-		<field name="userId" type="integer" column="user_id" precision="0" scale="0" nullable="true">
-			<options>
-				<option name="unsigned">1</option>
-			</options>
-		</field>
-		<field name="clientId" type="integer" column="client_id" precision="0" scale="0" nullable="false">
-			<options>
-				<option name="unsigned">1</option>
-			</options>
-		</field>
 		<field name="name" type="string" column="name" precision="0" scale="0" nullable="true" />
 		<field name="scopes" type="text" column="scopes" precision="0" scale="0" nullable="true" />
 		<field name="revoked" type="boolean" column="revoked" precision="0" scale="0" nullable="false" />
 		<field name="expiresAt" type="datetime" column="expires_at" precision="0" scale="0" nullable="true" />
+		<many-to-one field="user" target-entity="App\Model\User" fetch="LAZY">
+			<join-columns>
+				<join-column name="user_id" referenced-column-name="id" />
+			</join-columns>
+		</many-to-one>
+		<many-to-one field="client" target-entity="ItAces\Oauth\Entities\Client" fetch="LAZY">
+			<join-columns>
+				<join-column name="client_id" referenced-column-name="id" nullable="false" />
+			</join-columns>
+		</many-to-one>
 	</entity>
 </doctrine-mapping>

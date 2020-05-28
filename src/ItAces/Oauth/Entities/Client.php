@@ -8,13 +8,13 @@ use ItAces\UnderAdminControl;
  * @author Vitaliy Kovalenko vvk@kola.cloud
  *
  */
-class Clients extends \ItAces\ORM\Entities\EntityBase implements UnderAdminControl
+class Client extends \ItAces\ORM\Entities\EntityBase implements UnderAdminControl
 {
 
     /**
-     * @var integer
+     * @var \App\Model\User
      */
-    protected $userId;
+    protected $user;
 
     /**
      * @var string
@@ -45,13 +45,6 @@ class Clients extends \ItAces\ORM\Entities\EntityBase implements UnderAdminContr
      * @var boolean
      */
     protected $revoked;
-    /**
-     * @return integer
-     */
-    public function getUserId()
-    {
-        return $this->userId;
-    }
 
     /**
      * @return string
@@ -102,11 +95,19 @@ class Clients extends \ItAces\ORM\Entities\EntityBase implements UnderAdminContr
     }
 
     /**
-     * @param integer $userId
+     * @return \App\Model\User
      */
-    public function setUserId($userId)
+    public function getUser()
     {
-        $this->userId = $userId;
+        return $this->user;
+    }
+
+    /**
+     * @param \App\Model\User $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
     }
 
     /**

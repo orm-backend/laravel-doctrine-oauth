@@ -19,14 +19,14 @@ class AuthCode extends \ItAces\ORM\Entities\EntityBase implements UnderAdminCont
     protected $primary;
     
     /**
-     * @var integer
+     * @var \App\Model\User
      */
-    protected $userId;
+    protected $user;
 
     /**
-     * @var integer
+     * @var \ItAces\Oauth\Entities\Client
      */
-    protected $clientId;
+    protected $client;
 
     /**
      * @var string
@@ -44,6 +44,38 @@ class AuthCode extends \ItAces\ORM\Entities\EntityBase implements UnderAdminCont
     protected $expiresAt;
     
     /**
+     * @return \App\Model\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @return \ItAces\Oauth\Entities\Client
+     */
+    public function getClient()
+    {
+        return $this->client;
+    }
+
+    /**
+     * @param \App\Model\User $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+
+    /**
+     * @param \ItAces\Oauth\Entities\Client $client
+     */
+    public function setClient($client)
+    {
+        $this->client = $client;
+    }
+
+    /**
      * @return string
      */
     public function getPrimary()
@@ -57,22 +89,6 @@ class AuthCode extends \ItAces\ORM\Entities\EntityBase implements UnderAdminCont
     public function setPrimary($primary)
     {
         $this->primary = $primary;
-    }
-
-    /**
-     * @return integer
-     */
-    public function getUserId()
-    {
-        return $this->userId;
-    }
-
-    /**
-     * @return integer
-     */
-    public function getClientId()
-    {
-        return $this->clientId;
     }
 
     /**
@@ -97,22 +113,6 @@ class AuthCode extends \ItAces\ORM\Entities\EntityBase implements UnderAdminCont
     public function getExpiresAt()
     {
         return $this->expiresAt;
-    }
-
-    /**
-     * @param integer $userId
-     */
-    public function setUserId($userId)
-    {
-        $this->userId = $userId;
-    }
-
-    /**
-     * @param integer $clientId
-     */
-    public function setClientId($clientId)
-    {
-        $this->clientId = $clientId;
     }
 
     /**

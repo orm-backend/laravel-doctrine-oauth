@@ -18,14 +18,14 @@ class AccessToken extends \ItAces\ORM\Entities\EntityBase implements UnderAdminC
     protected $primary;
     
     /**
-     * @var integer
+     * @var \App\Model\User
      */
-    protected $userId;
+    protected $user;
 
     /**
-     * @var integer
+     * @var \ItAces\Oauth\Entities\Client
      */
-    protected $clientId;
+    protected $client;
 
     /**
      * @var string
@@ -64,19 +64,35 @@ class AccessToken extends \ItAces\ORM\Entities\EntityBase implements UnderAdminC
     }
 
     /**
-     * @return integer
+     * @return \App\Model\User
      */
-    public function getUserId()
+    public function getUser()
     {
-        return $this->userId;
+        return $this->user;
     }
 
     /**
-     * @return integer
+     * @return \ItAces\Oauth\Entities\Client
      */
-    public function getClientId()
+    public function getClient()
     {
-        return $this->clientId;
+        return $this->client;
+    }
+
+    /**
+     * @param \App\Model\User $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+
+    /**
+     * @param \ItAces\Oauth\Entities\Client $client
+     */
+    public function setClient($client)
+    {
+        $this->client = $client;
     }
 
     /**
@@ -109,22 +125,6 @@ class AccessToken extends \ItAces\ORM\Entities\EntityBase implements UnderAdminC
     public function getExpiresAt()
     {
         return $this->expiresAt;
-    }
-
-    /**
-     * @param integer $userId
-     */
-    public function setUserId($userId)
-    {
-        $this->userId = $userId;
-    }
-
-    /**
-     * @param integer $clientId
-     */
-    public function setClientId($clientId)
-    {
-        $this->clientId = $clientId;
     }
 
     /**
