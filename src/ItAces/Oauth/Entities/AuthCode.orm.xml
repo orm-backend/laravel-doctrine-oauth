@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+	<entity name="ItAces\Oauth\Entities\AuthCode" table="d_oauth_auth_codes">
+		<indexes>
+			<index name="oauth_auth_codes_user_id" columns="user_id" />
+			<index name="oauth_auth_codess_client_id" columns="client_id" />
+			<index name="oauth_auth_codes_revoked" columns="revoked" />
+			<index name="oauth_auth_codes_expires_at" columns="expires_at" />
+		</indexes>
+		<unique-constraints>
+			<unique-constraint name="oauth_access_tokens_primary_unique" columns="primary"/>
+	    </unique-constraints>
+		<field name="primary" type="string" column="primary" length="100" nullable="false" />
+		<field name="userId" type="integer" column="user_id" precision="0" scale="0" nullable="false">
+			<options>
+				<option name="unsigned">1</option>
+			</options>
+		</field>
+		<field name="clientId" type="integer" column="client_id" precision="0" scale="0" nullable="false">
+			<options>
+				<option name="unsigned">1</option>
+			</options>
+		</field>
+		<field name="scopes" type="text" column="scopes" precision="0" scale="0" nullable="true" />
+		<field name="revoked" type="boolean" column="revoked" precision="0" scale="0" nullable="false" />
+		<field name="expiresAt" type="datetime" column="expires_at" precision="0" scale="0" nullable="true" />
+	</entity>
+</doctrine-mapping>
