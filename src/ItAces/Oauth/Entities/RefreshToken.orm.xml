@@ -8,12 +8,16 @@
 			<index name="oauth_refresh_tokens_revoked" columns="revoked" />
 			<index name="oauth_refresh_tokens_expires_at" columns="expires_at" />
 		</indexes>
-		<unique-constraints>
-			<unique-constraint name="oauth_access_tokens_primary_unique" columns="primary"/>
-	    </unique-constraints>
-		<field name="primary" type="string" column="primary" length="100" nullable="false" />
+		<id name="id" type="string" column="id" length="100" nullable="false" />
 		<field name="accessTokenId" type="string" column="access_token_id" length="100" precision="0" scale="0" nullable="false" />
 		<field name="revoked" type="boolean" column="revoked" precision="0" scale="0" nullable="false" />
 		<field name="expiresAt" type="datetime" column="expires_at" precision="0" scale="0" nullable="true" />
+		<association-overrides>
+			<association-override name="createdBy">
+				<join-columns>
+					<join-column name="created_by" referenced-column-name="id" nullable="true" />
+				</join-columns>
+			</association-override>
+		</association-overrides>
 	</entity>
 </doctrine-mapping>

@@ -2,20 +2,18 @@
 
 namespace ItAces\Oauth\Entities;
 
-use ItAces\UnderAdminControl;
-
 /**
  * @author Vitaliy Kovalenko vvk@kola.cloud
  *
  */
-class RefreshToken extends \ItAces\ORM\Entities\EntityBase implements UnderAdminControl
+class RefreshToken extends OauthEntity
 {
 
     /**
      *
      * @var string
      */
-    protected $primary;
+    protected $id;
     
     /**
      * @var integer
@@ -31,21 +29,6 @@ class RefreshToken extends \ItAces\ORM\Entities\EntityBase implements UnderAdmin
      * @var \Carbon\Carbon
      */
     protected $expiresAt;
-    /**
-     * @return string
-     */
-    public function getPrimary()
-    {
-        return $this->primary;
-    }
-
-    /**
-     * @param string $primary
-     */
-    public function setPrimary($primary)
-    {
-        $this->primary = $primary;
-    }
 
     /**
      * @return integer

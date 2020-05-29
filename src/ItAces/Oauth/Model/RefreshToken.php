@@ -9,8 +9,6 @@ namespace ItAces\Oauth\Model;
 class RefreshToken extends \Laravel\Passport\RefreshToken
 {
     
-    protected $primaryKey = 'primary';
-
     /**
      * The database table used by the model.
      *
@@ -18,4 +16,17 @@ class RefreshToken extends \Laravel\Passport\RefreshToken
      */
     protected $table = 'd_oauth_refresh_tokens';
 
+    public static function booted()
+    {
+        self::creating(function($model) {
+            if (app()->runningInConsole()) {
+                $model->created_by = 1;
+            } else {
+                $model->created_by = auth()->id();
+            }
+            
+            $model->created_at = now();
+        });
+    }
+    
 }

@@ -29,6 +29,6 @@ composer require it-aces/laravel-doctrine-oauth
 
 ## Setting up
 
-* No required settings
+* php artisan passport:client --password
 
 

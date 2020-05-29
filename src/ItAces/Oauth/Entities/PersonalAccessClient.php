@@ -6,16 +6,19 @@
  */
 namespace ItAces\Oauth\Entities;
 
-use ItAces\UnderAdminControl;
-
-
 /**
  * @author Vitaliy Kovalenko vvk@kola.cloud
  *
  */
-class PersonalAccessClient extends \ItAces\ORM\Entities\EntityBase implements UnderAdminControl
+class PersonalAccessClient extends OauthEntity
 {
 
+    /**
+     *
+     * @var integer
+     */
+    protected $id;
+    
     /**
      * @var \ItAces\Oauth\Entities\Client
      */

@@ -9,10 +9,7 @@
 			<index name="oauth_auth_codes_revoked" columns="revoked" />
 			<index name="oauth_auth_codes_expires_at" columns="expires_at" />
 		</indexes>
-		<unique-constraints>
-			<unique-constraint name="oauth_access_tokens_primary_unique" columns="primary"/>
-	    </unique-constraints>
-		<field name="primary" type="string" column="primary" length="100" nullable="false" />
+		<id name="id" type="string" column="id" length="100" nullable="false" />
 		<field name="scopes" type="text" column="scopes" precision="0" scale="0" nullable="true" />
 		<field name="revoked" type="boolean" column="revoked" precision="0" scale="0" nullable="false" />
 		<field name="expiresAt" type="datetime" column="expires_at" precision="0" scale="0" nullable="true" />

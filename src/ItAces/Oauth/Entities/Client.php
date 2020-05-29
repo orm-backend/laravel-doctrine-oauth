@@ -2,15 +2,19 @@
 
 namespace ItAces\Oauth\Entities;
 
-use ItAces\UnderAdminControl;
-
 /**
  * @author Vitaliy Kovalenko vvk@kola.cloud
  *
  */
-class Client extends \ItAces\ORM\Entities\EntityBase implements UnderAdminControl
+class Client extends OauthEntity
 {
 
+    /**
+     * 
+     * @var integer
+     */
+    protected $id;
+    
     /**
      * @var \App\Model\User
      */

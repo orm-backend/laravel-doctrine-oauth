@@ -2,21 +2,18 @@
 
 namespace ItAces\Oauth\Entities;
 
-use ItAces\UnderAdminControl;
-
-
 /**
  * @author Vitaliy Kovalenko vvk@kola.cloud
  *
  */
-class AuthCode extends \ItAces\ORM\Entities\EntityBase implements UnderAdminControl
+class AuthCode extends OauthEntity
 {
-
+    
     /**
      *
      * @var string
      */
-    protected $primary;
+    protected $id;
     
     /**
      * @var \App\Model\User
@@ -73,22 +70,6 @@ class AuthCode extends \ItAces\ORM\Entities\EntityBase implements UnderAdminCont
     public function setClient($client)
     {
         $this->client = $client;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPrimary()
-    {
-        return $this->primary;
-    }
-
-    /**
-     * @param string $primary
-     */
-    public function setPrimary($primary)
-    {
-        $this->primary = $primary;
     }
 
     /**

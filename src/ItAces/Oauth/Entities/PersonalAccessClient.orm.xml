@@ -6,6 +6,12 @@
 		<indexes>
 			<index name="oauth_personal_access_clients_client_id" columns="client_id" />
 		</indexes>
+		<id name="id" type="integer" column="id">
+			<options>
+				<option name="unsigned">1</option>
+			</options>
+			<generator strategy="IDENTITY" />
+		</id>
 		<many-to-one field="client" target-entity="ItAces\Oauth\Entities\Client" fetch="LAZY">
 			<join-columns>
 				<join-column name="client_id" referenced-column-name="id" nullable="false" />

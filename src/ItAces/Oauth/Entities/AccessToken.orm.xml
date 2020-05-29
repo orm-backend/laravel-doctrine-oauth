@@ -10,10 +10,7 @@
 			<index name="oauth_access_tokens_revoked" columns="revoked" />
 			<index name="oauth_access_tokens_expires_at" columns="expires_at" />
 		</indexes>
-		<unique-constraints>
-			<unique-constraint name="oauth_access_tokens_primary_unique" columns="primary"/>
-	    </unique-constraints>
-		<field name="primary" type="string" column="primary" length="100" nullable="false" />
+		<id name="id" type="string" column="id" length="100" nullable="false" />
 		<field name="name" type="string" column="name" precision="0" scale="0" nullable="true" />
 		<field name="scopes" type="text" column="scopes" precision="0" scale="0" nullable="true" />
 		<field name="revoked" type="boolean" column="revoked" precision="0" scale="0" nullable="false" />
@@ -28,5 +25,12 @@
 				<join-column name="client_id" referenced-column-name="id" nullable="false" />
 			</join-columns>
 		</many-to-one>
+		<association-overrides>
+			<association-override name="createdBy">
+				<join-columns>
+					<join-column name="created_by" referenced-column-name="id" nullable="true" />
+				</join-columns>
+			</association-override>
+		</association-overrides>
 	</entity>
 </doctrine-mapping>

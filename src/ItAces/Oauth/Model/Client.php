@@ -16,4 +16,17 @@ class Client extends \Laravel\Passport\Client
      */
     protected $table = 'd_oauth_clients';
 
+    public static function booted()
+    {
+        self::creating(function($model) {
+            if (app()->runningInConsole()) {
+                $model->created_by = 1;
+            } else {
+                $model->created_by = auth()->id();
+            }
+            
+            $model->created_at = now();
+        });
+    }
+    
 }
