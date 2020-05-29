@@ -23,7 +23,7 @@ class RefreshToken extends OauthEntity
     /**
      * @var boolean
      */
-    protected $revoked;
+    protected $revoked = false;
 
     /**
      * @var \Carbon\Carbon

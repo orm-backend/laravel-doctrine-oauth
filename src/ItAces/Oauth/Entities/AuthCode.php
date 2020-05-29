@@ -33,7 +33,7 @@ class AuthCode extends OauthEntity
     /**
      * @var boolean
      */
-    protected $revoked;
+    protected $revoked = false;
 
     /**
      * @var \Carbon\Carbon
