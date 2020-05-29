@@ -38,17 +38,17 @@ class Client extends OauthEntity
     /**
      * @var boolean
      */
-    protected $personalAccessClient;
+    protected $personalAccessClient = false;
 
     /**
      * @var boolean
      */
-    protected $passwordClient;
+    protected $passwordClient = false;
 
     /**
      * @var boolean
      */
-    protected $revoked;
+    protected $revoked = false;
 
     /**
      * @return string
