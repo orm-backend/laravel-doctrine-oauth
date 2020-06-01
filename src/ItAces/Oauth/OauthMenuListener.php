@@ -53,7 +53,7 @@ class OauthMenuListener
         $classNames = [AccessToken::class, AuthCode::class, Client::class, PersonalAccessClient::class, RefreshToken::class];
         
         foreach ($classNames as $className) {
-            $classUrlName = Helper::classToUlr($className);
+            $classUrlName = Helper::classToUrl($className);
             $submenu = $this->getMenuForClass($className, $classUrlName, $currentRoute, $activeModel);
             
             if ($submenu) {
