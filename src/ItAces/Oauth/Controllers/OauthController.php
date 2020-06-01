@@ -29,9 +29,10 @@ class OauthController extends WebController
      * 
      * @param  \Illuminate\Http\Request  $request
      * @param string $classUrlName
+     * @param string $group
      * @return \Illuminate\Http\Response
      */
-    public function search(Request $request, string $classUrlName)
+    public function search(Request $request, string $classUrlName, string $group)
     {
         $className = Helper::classFromUlr($classUrlName);
         $classShortName = (new \ReflectionClass($className))->getShortName();
@@ -40,6 +41,7 @@ class OauthController extends WebController
         $container = new FieldContainer($this->repository->em());
         
         $meta = [
+            'group' => $group,
             'class' => $className,
             'title' => __( Str::pluralCamelWords($classShortName) ),
             'classUrlName' => $classUrlName
@@ -70,9 +72,10 @@ class OauthController extends WebController
      * @param  \Illuminate\Http\Request  $request
      * @param string $classUrlName
      * @param mixed $id
+     * @param string $group
      * @return \Illuminate\Http\Response
      */
-    public function details(Request $request, string $classUrlName, $id)
+    public function details(Request $request, string $classUrlName, $id, string $group)
     {
         $className = Helper::classFromUlr($classUrlName);
         $entity = $this->repository->findOrFail($className, $id);
@@ -81,6 +84,7 @@ class OauthController extends WebController
         $container->addEntity($entity);
 
         $meta = [
+            'group' => $group,
             'class' => $className,
             'title' => __( Str::pluralCamelWords($classShortName, 1) ),
             'classUrlName' => $classUrlName
@@ -97,9 +101,10 @@ class OauthController extends WebController
      * @param  \Illuminate\Http\Request  $request
      * @param string $classUrlName
      * @param mixed $id
+     * @param string $group
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request, string $classUrlName, $id)
+    public function edit(Request $request, string $classUrlName, $id, string $group)
     {
         $className = Helper::classFromUlr($classUrlName);
         $entity = $this->repository->findOrFail($className, $id);
@@ -108,6 +113,7 @@ class OauthController extends WebController
         $container->addEntity($entity);
         
         $meta = [
+            'group' => $group,
             'class' => $className,
             'title' => __( Str::pluralCamelWords($classShortName, 1) ),
             'classUrlName' => $classUrlName
@@ -124,15 +130,17 @@ class OauthController extends WebController
      *
      * @param  \Illuminate\Http\Request  $request
      * @param string $classUrlName
+     * @param string $group
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request, string $classUrlName)
+    public function create(Request $request, string $classUrlName, string $group)
     {
         $className = Helper::classFromUlr($classUrlName);
         $classShortName = (new \ReflectionClass($className))->getShortName();
         $container = new FieldContainer($this->repository->em());
         $container->addEntity(new $className());
         $meta = [
+            'group' => $group,
             'class' => $className,
             'title' => __( Str::pluralCamelWords($classShortName, 1) ),
             'classUrlName' => $classUrlName
@@ -150,9 +158,10 @@ class OauthController extends WebController
      * @param  \Illuminate\Http\Request  $request
      * @param string $classUrlName
      * @param mixed $id
+     * @param string $group
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, string $classUrlName, $id)
+    public function update(Request $request, string $classUrlName, $id, string $group)
     {
         $className = Helper::classFromUlr($classUrlName);
         $classShortName = (new \ReflectionClass($className))->getShortName();
@@ -167,9 +176,10 @@ class OauthController extends WebController
      *
      * @param  \Illuminate\Http\Request  $request
      * @param string $classUrlName
+     * @param string $group
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, string $classUrlName)
+    public function store(Request $request, string $classUrlName, string $group)
     {
         $className = Helper::classFromUlr($classUrlName);
         $classShortName = (new \ReflectionClass($className))->getShortName();
@@ -185,9 +195,10 @@ class OauthController extends WebController
      * @param  \Illuminate\Http\Request  $request
      * @param string $classUrlName
      * @param mixed $id
+     * @param string $group
      * @return \Illuminate\Http\Response
      */
-    public function delete(Request $request, string $classUrlName, $id)
+    public function delete(Request $request, string $classUrlName, $id, string $group)
     {
         $className = Helper::classFromUlr($classUrlName);
         $classShortName = (new \ReflectionClass($className))->getShortName();
@@ -209,9 +220,10 @@ class OauthController extends WebController
      *
      * @param  \Illuminate\Http\Request  $request
      * @param string $classUrlName
+     * @param string $group
      * @return \Illuminate\Http\Response
      */
-    public function batchDelete(Request  $request, string $classUrlName)
+    public function batchDelete(Request  $request, string $classUrlName, string $group)
     {
         $className = Helper::classFromUlr($classUrlName);
         $classShortName = (new \ReflectionClass($className))->getShortName();

@@ -18,7 +18,7 @@
 			</options>
 			<generator strategy="IDENTITY" />
 		</id>
-		<field name="name" type="string" column="name" precision="0" scale="0" nullable="false" />
+		<field name="name" type="string" column="name" length="250" precision="0" scale="0" nullable="false" />
 		<field name="secret" type="string" column="secret" length="100" precision="0" scale="0" nullable="true" />
 		<field name="redirect" type="string" column="redirect" length="250" precision="0" scale="0" nullable="false" />
 		<field name="personalAccessClient" type="boolean" column="personal_access_client" precision="0" scale="0" nullable="false" />

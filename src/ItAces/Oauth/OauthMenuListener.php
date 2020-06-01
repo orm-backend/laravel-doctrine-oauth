@@ -70,6 +70,7 @@ class OauthMenuListener
      * @param string $className
      * @param string $classUrlName
      * @param string $currentRoute
+     * @param string $activeGroup
      * @param string $activeModel
      * @return NULL|\ItAces\Web\Menu\Menu
      */
@@ -92,7 +93,7 @@ class OauthMenuListener
         
         if (Gate::inspect('read', $classUrlName)->allowed()) {
             $menu->addSubmenuElement('search', new Menu([
-                'url' => route('admin.oauth.search', $classUrlName, false),
+                'url' => route('admin.oauth.search', [$classUrlName], false),
                 'name' => __('Search'),
                 'title' => __('Element List'),
                 'active' => $activeModel && $activeModel == $classUrlName && $currentRoute == 'admin.oauth.search'
@@ -101,7 +102,7 @@ class OauthMenuListener
         
         if (Gate::inspect('create', $classUrlName)->allowed()) {
             $menu->addSubmenuElement('create', new Menu([
-                'url' => route('admin.oauth.create', $classUrlName, false),
+                'url' => route('admin.oauth.create', [$classUrlName], false),
                 'name' => __('Create'),
                 'title' => __('Add New Element'),
                 'active' => $activeModel && $activeModel == $classUrlName && $currentRoute == 'admin.oauth.create'
@@ -110,7 +111,7 @@ class OauthMenuListener
         
         if (Gate::inspect('settings')->allowed()) {
             $menu->addSubmenuElement('settings', new Menu([
-                'url' => route('admin.oauth.settings', $classUrlName, false),
+                'url' => route('admin.oauth.settings', [$classUrlName], false),
                 'name' => __('Settings'),
                 'title' => __('Entity Settings'),
                 'active' => $activeModel && $activeModel == $classUrlName && Str::startsWith($currentRoute, 'admin.oauth.settings')
