@@ -1,30 +1,32 @@
 {
-    "name": "it-aces/laravel-doctrine-oauth",
-    "description": "Laravel passport integration.",
-    "type": "library",
-    "license": "MIT",
-    "keywords": ["it-aces", "laravel-doctrine", "oauth"],
-    "authors": [
-        {
-            "name": "Vitaliy Kovalenko",
-            "email": "vvk@kola.cloud"
-        }
-    ],
-    "require": {
-    	"it-aces/laravel-doctrine": "dev-master"
-    },
-    "require-dev": {
-    },
-    "autoload": {
-        "psr-4": {
-        	"ItAces\\Oauth\\": "src/ItAces/Oauth/"
-        }
+	"name" : "it-aces/laravel-doctrine-oauth",
+	"description" : "Laravel passport integration.",
+	"type" : "library",
+	"license" : "MIT",
+	"keywords" : [
+		"it-aces",
+		"laravel-doctrine",
+		"oauth"
+	],
+	"authors" : [{
+			"name" : "Vitaliy Kovalenko",
+			"email" : "vvk@kola.cloud"
+		}
+	],
+	"require" : {
+		"it-aces/laravel-doctrine" : "dev-master"
 	},
-    "extra": {
-	    "laravel": {
-	        "providers": [
-	            "ItAces\\Oauth\\PackageServiceProvider"
-	        ]
-	    }
+	"autoload" : {
+		"psr-4" : {
+			"ItAces\\Oauth\\" : "src/ItAces/Oauth/",
+			"ItAces\\Admin\\" : "src/ItAces/Admin/"
+		}
+	},
+	"extra" : {
+		"laravel" : {
+			"providers" : [
+				"ItAces\\Oauth\\PackageServiceProvider"
+			]
+		}
 	}
 }

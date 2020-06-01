@@ -4,13 +4,13 @@ namespace ItAces\Oauth\Entities;
 
 use App\Model\User;
 use Doctrine\Common\Persistence\Event\LifecycleEventArgs;
-use ItAces\UnderAdminControl;
+use ItAces\Publishable;
 
 /**
  * @author Vitaliy Kovalenko vvk@kola.cloud
  *
  */
-abstract class OauthEntity extends \ItAces\ORM\Entities\EntityBase implements UnderAdminControl
+abstract class OauthEntity extends \ItAces\ORM\Entities\EntityBase
 {
 
     /**

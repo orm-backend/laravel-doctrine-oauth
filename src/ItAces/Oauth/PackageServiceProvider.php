@@ -34,8 +34,9 @@ class PackageServiceProvider extends ServiceProvider
             'ItAces\Oauth\Entities'
         );
         
-        Passport::routes();
+        $this->loadRoutesFrom(__DIR__.'/../../routes.php');
         
+        Passport::routes();
         Passport::useAuthCodeModel(AuthCode::class);
         Passport::useClientModel(Client::class);
         Passport::usePersonalAccessClientModel(PersonalAccessClient::class);
