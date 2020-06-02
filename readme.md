@@ -22,7 +22,7 @@ _In my opinion, for the first-part mobile and SPA applications, when multi-facto
 
 ## Dependencies
 
- * [it-aces/laravel-doctrine](https://bitbucket.org/vitaliy_kovalenko/laravel-doctrine/src/master/)
+ * [it-aces/laravel-doctrine-admin](https://bitbucket.org/vitaliy_kovalenko/laravel-doctrine-admin/src/master/)
 
 ## Install
 
@@ -49,7 +49,18 @@ composer require it-aces/laravel-doctrine-oauth
 
 ## Setting up
 
- * php artisan passport:client --password
+ * config/admin.php
+
+```PHP
+'views' => [
+	***
+	
+	'it_aces-oauth-entities-client' => [
+        'create' => 'oauth::client.create'
+    ],
+]
+```
+
  * config/auth.php
  
 ```PHP
