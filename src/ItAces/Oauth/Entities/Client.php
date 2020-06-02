@@ -164,12 +164,22 @@ class Client extends OauthEntity
 
     public static function getRequestValidationRules()
     {
-        return [];
+        return [
+            'user' => ['exclude_unless:personalAccessClient,1', 'required', 'integer', 'min:1', 'exists:App\Model\User,id'],
+        ];
     }
     
     public function getModelValidationRules()
     {
-        return [];
+        return [
+            'name' => ['required', 'string', 'max:250'],
+            'secret' => ['required', 'string', 'max:100'],
+            'redirect' => ['exclude_if:personalAccessClient,1', 'exclude_if:passwordClient,1', 'required', 'string', 'max:250', 'active_url'],
+            'personalAccessClient' => ['required', 'boolean'],
+            'passwordClient' => ['required', 'boolean'],
+            'revoked' => ['required', 'boolean'],
+            'user' => ['exclude_unless:personalAccessClient,1', 'required'],
+        ];
     }
 
 }
