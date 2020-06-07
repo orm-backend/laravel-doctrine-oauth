@@ -35,7 +35,7 @@ class PackageServiceProvider extends ServiceProvider
         );
         
         $this->loadRoutesFrom(__DIR__.'/../../routes.php');
-        $this->loadViewsFrom(__DIR__.'/../../../resources/views', 'itaces-oauth');
+        $this->loadViewsFrom(__DIR__.'/../../../resources/views', 'oauth');
         
         Passport::routes();
         Passport::useAuthCodeModel(AuthCode::class);

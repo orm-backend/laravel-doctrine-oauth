@@ -4,19 +4,18 @@ namespace ItAces\Oauth\Entities;
 
 use App\Model\User;
 use Doctrine\Common\Persistence\Event\LifecycleEventArgs;
-use ItAces\Publishable;
 
 /**
  * @author Vitaliy Kovalenko vvk@kola.cloud
  *
  */
-abstract class OauthEntity extends \ItAces\ORM\Entities\EntityBase
+abstract class OauthEntity extends \ItAces\ORM\Entities\BaseEntity
 {
 
     /**
      * 
      * {@inheritDoc}
-     * @see \ItAces\ORM\Entities\EntityBase::onBeforeAdd()
+     * @see \ItAces\ORM\Entities\Entity::onBeforeAdd()
      */
     public function onBeforeAdd(LifecycleEventArgs $event)
     {
