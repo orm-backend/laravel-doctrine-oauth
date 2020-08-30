@@ -4,7 +4,7 @@
  * @author Vitaliy Kovalenko vvk@kola.cloud
  *
  */
-namespace ItAces\Oauth\Entities;
+namespace VVK\Oauth\Entities;
 
 /**
  * @author Vitaliy Kovalenko vvk@kola.cloud
@@ -20,12 +20,12 @@ class PersonalAccessClient extends OauthEntity
     protected $id;
     
     /**
-     * @var \ItAces\Oauth\Entities\Client
+     * @var \VVK\Oauth\Entities\Client
      */
     protected $client;
 
     /**
-     * @return \ItAces\Oauth\Entities\Client
+     * @return \VVK\Oauth\Entities\Client
      */
     public function getClient()
     {
@@ -33,7 +33,7 @@ class PersonalAccessClient extends OauthEntity
     }
 
     /**
-     * @param \ItAces\Oauth\Entities\Client $client
+     * @param \VVK\Oauth\Entities\Client $client
      */
     public function setClient($client)
     {

@@ -22,7 +22,7 @@ _In my opinion, for the first-part mobile and SPA applications, when multi-facto
 
 ## Dependencies
 
- * [it-aces/laravel-doctrine-admin](https://bitbucket.org/vitaliy_kovalenko/laravel-doctrine-admin/src/master/)
+ * [vvk/laravel-doctrine-admin](https://github.com/vvk-kolsky/laravel-doctrine-admin)
 
 ## Install
 
@@ -32,11 +32,11 @@ _In my opinion, for the first-part mobile and SPA applications, when multi-facto
 "repositories": [
 	{
        "type": "vcs",
-       "url": "git@bitbucket.org:vitaliy_kovalenko/laravel-doctrine.git"
+       "url": "git@github.com:vvk-kolsky/laravel-doctrine.git"
     },
     {
        "type": "vcs",
-       "url": "git@bitbucket.org:vitaliy_kovalenko/laravel-doctrine-oauth.git"
+       "url": "git@github.com:vvk-kolsky/laravel-doctrine-oauth.git"
     }
 ]
 ```
@@ -44,7 +44,7 @@ _In my opinion, for the first-part mobile and SPA applications, when multi-facto
 * Install packages
 
 ```BASH
-composer require it-aces/laravel-doctrine-oauth
+composer require vvk/laravel-doctrine-oauth
 ```
 
 ## Setting up

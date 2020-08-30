@@ -1,7 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
-use ItAces\Admin\Controllers\SettingsController;
-use ItAces\Oauth\Controllers\OauthController;
+use VVK\Admin\Controllers\SettingsController;
+use VVK\Oauth\Controllers\OauthController;
 
 Route::group([
     'prefix' => '/admin/oauth/{model}',

@@ -1,6 +1,6 @@
 <?php
 
-namespace ItAces\Oauth\Entities;
+namespace VVK\Oauth\Entities;
 
 /**
  * @author Vitaliy Kovalenko vvk@kola.cloud
@@ -21,7 +21,7 @@ class AuthCode extends OauthEntity
     protected $user;
 
     /**
-     * @var \ItAces\Oauth\Entities\Client
+     * @var \VVK\Oauth\Entities\Client
      */
     protected $client;
 
@@ -49,7 +49,7 @@ class AuthCode extends OauthEntity
     }
 
     /**
-     * @return \ItAces\Oauth\Entities\Client
+     * @return \VVK\Oauth\Entities\Client
      */
     public function getClient()
     {
@@ -65,7 +65,7 @@ class AuthCode extends OauthEntity
     }
 
     /**
-     * @param \ItAces\Oauth\Entities\Client $client
+     * @param \VVK\Oauth\Entities\Client $client
      */
     public function setClient($client)
     {

@@ -1,16 +1,16 @@
 <?php
 
-namespace ItAces\Oauth\Controllers;
+namespace VVK\Oauth\Controllers;
 
 use App\Model\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
-use ItAces\Admin\Controllers\AdminController;
-use ItAces\Utility\Helper;
-use ItAces\Web\Fields\FieldContainer;
-use ItAces\Oauth\Entities\Client;
-use ItAces\Oauth\Entities\PersonalAccessClient;
+use VVK\Admin\Controllers\AdminController;
+use VVK\Utility\Helper;
+use VVK\Web\Fields\FieldContainer;
+use VVK\Oauth\Entities\Client;
+use VVK\Oauth\Entities\PersonalAccessClient;
 
 class OauthController extends AdminController
 {
@@ -18,7 +18,7 @@ class OauthController extends AdminController
     /**
      * 
      * {@inheritDoc}
-     * @see \ItAces\Admin\Controllers\AdminController::store($request, $classUrlName, $group)
+     * @see \VVK\Admin\Controllers\AdminController::store($request, $classUrlName, $group)
      */
     public function store(Request $request, string $classUrlName, string $group)
     {

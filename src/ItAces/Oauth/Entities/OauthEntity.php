@@ -1,6 +1,6 @@
 <?php
 
-namespace ItAces\Oauth\Entities;
+namespace VVK\Oauth\Entities;
 
 use App\Model\User;
 use Doctrine\Common\Persistence\Event\LifecycleEventArgs;
@@ -9,13 +9,13 @@ use Doctrine\Common\Persistence\Event\LifecycleEventArgs;
  * @author Vitaliy Kovalenko vvk@kola.cloud
  *
  */
-abstract class OauthEntity extends \ItAces\ORM\Entities\BaseEntity
+abstract class OauthEntity extends \VVK\ORM\Entities\BaseEntity
 {
 
     /**
      * 
      * {@inheritDoc}
-     * @see \ItAces\ORM\Entities\Entity::onBeforeAdd()
+     * @see \VVK\ORM\Entities\Entity::onBeforeAdd()
      */
     public function onBeforeAdd(LifecycleEventArgs $event)
     {

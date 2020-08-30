@@ -1,6 +1,6 @@
 <?php
 
-namespace ItAces\Oauth\Entities;
+namespace VVK\Oauth\Entities;
 
 /**
  * @author Vitaliy Kovalenko vvk@kola.cloud

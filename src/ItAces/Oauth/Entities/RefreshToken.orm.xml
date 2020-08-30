@@ -2,7 +2,7 @@
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-	<entity name="ItAces\Oauth\Entities\RefreshToken" table="d_oauth_refresh_tokens">
+	<entity name="VVK\Oauth\Entities\RefreshToken" table="d_oauth_refresh_tokens">
 		<indexes>
 			<index name="oauth_refresh_tokens_access_token" columns="access_token_id" />
 			<index name="oauth_refresh_tokens_revoked" columns="revoked" />

@@ -2,7 +2,7 @@
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-	<entity name="ItAces\Oauth\Entities\Client" table="d_oauth_clients">
+	<entity name="VVK\Oauth\Entities\Client" table="d_oauth_clients">
 		<indexes>
 			<index name="oauth_clients_user_id" columns="user_id" />
 			<index name="oauth_clients_name" columns="name" />

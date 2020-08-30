@@ -1,10 +1,10 @@
 {
-	"name" : "it-aces/laravel-doctrine-oauth",
+	"name" : "vvk/laravel-doctrine-oauth",
 	"description" : "Laravel passport integration.",
 	"type" : "library",
 	"license" : "MIT",
 	"keywords" : [
-		"it-aces",
+		"vvk",
 		"laravel-doctrine",
 		"oauth"
 	],
@@ -14,18 +14,18 @@
 		}
 	],
 	"require" : {
-		"it-aces/laravel-doctrine" : "dev-master"
+		"vvk/laravel-doctrine" : "dev-master"
 	},
 	"autoload" : {
 		"psr-4" : {
-			"ItAces\\Oauth\\" : "src/ItAces/Oauth/",
-			"ItAces\\Admin\\" : "src/ItAces/Admin/"
+			"VVK\\Oauth\\" : "src/VVK/Oauth/",
+			"VVK\\Admin\\" : "src/VVK/Admin/"
 		}
 	},
 	"extra" : {
 		"laravel" : {
 			"providers" : [
-				"ItAces\\Oauth\\PackageServiceProvider"
+				"VVK\\Oauth\\PackageServiceProvider"
 			]
 		}
 	}

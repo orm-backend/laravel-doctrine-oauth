@@ -1,6 +1,6 @@
 <?php
 
-namespace ItAces\Oauth\Model;
+namespace VVK\Oauth\Model;
 
 
 /**

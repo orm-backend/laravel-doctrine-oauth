@@ -1,14 +1,14 @@
 <?php
-namespace ItAces\Oauth;
+namespace VVK\Oauth;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Laravel\Passport\Passport;
-use ItAces\ServiceProvider;
-use ItAces\Oauth\Model\AccessToken;
-use ItAces\Oauth\Model\AuthCode;
-use ItAces\Oauth\Model\PersonalAccessClient;
-use ItAces\Oauth\Model\RefreshToken;
-use ItAces\Oauth\Model\Client;
+use VVK\ServiceProvider;
+use VVK\Oauth\Model\AccessToken;
+use VVK\Oauth\Model\AuthCode;
+use VVK\Oauth\Model\PersonalAccessClient;
+use VVK\Oauth\Model\RefreshToken;
+use VVK\Oauth\Model\Client;
 
 /**
  *
@@ -29,9 +29,9 @@ class PackageServiceProvider extends ServiceProvider
         $this->bootModel(
             $manager,
             [
-                base_path('vendor/it-aces/laravel-doctrine-oauth/src/ItAces/Oauth/Entities') => 'ItAces\Oauth\Entities'
+                base_path('vendor/vvk/laravel-doctrine-oauth/src/VVK/Oauth/Entities') => 'VVK\Oauth\Entities'
             ],
-            'ItAces\Oauth\Entities'
+            'VVK\Oauth\Entities'
         );
         
         $this->loadRoutesFrom(__DIR__.'/../../routes.php');
