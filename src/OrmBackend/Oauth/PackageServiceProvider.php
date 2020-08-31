@@ -1,14 +1,14 @@
 <?php
-namespace VVK\Oauth;
+namespace OrmBackend\Oauth;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Laravel\Passport\Passport;
-use VVK\ServiceProvider;
-use VVK\Oauth\Model\AccessToken;
-use VVK\Oauth\Model\AuthCode;
-use VVK\Oauth\Model\PersonalAccessClient;
-use VVK\Oauth\Model\RefreshToken;
-use VVK\Oauth\Model\Client;
+use OrmBackend\ServiceProvider;
+use OrmBackend\Oauth\Model\AccessToken;
+use OrmBackend\Oauth\Model\AuthCode;
+use OrmBackend\Oauth\Model\PersonalAccessClient;
+use OrmBackend\Oauth\Model\RefreshToken;
+use OrmBackend\Oauth\Model\Client;
 
 /**
  *
@@ -29,9 +29,9 @@ class PackageServiceProvider extends ServiceProvider
         $this->bootModel(
             $manager,
             [
-                base_path('vendor/vvk/laravel-doctrine-oauth/src/VVK/Oauth/Entities') => 'VVK\Oauth\Entities'
+                base_path('vendor/vvk/laravel-doctrine-oauth/src/OrmBackend/Oauth/Entities') => 'OrmBackend\Oauth\Entities'
             ],
-            'VVK\Oauth\Entities'
+            'OrmBackend\Oauth\Entities'
         );
         
         $this->loadRoutesFrom(__DIR__.'/../../routes.php');

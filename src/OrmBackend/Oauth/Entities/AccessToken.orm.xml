@@ -2,7 +2,7 @@
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-	<entity name="VVK\Oauth\Entities\AccessToken" table="d_oauth_access_tokens">
+	<entity name="OrmBackend\Oauth\Entities\AccessToken" table="d_oauth_access_tokens">
 		<indexes>
 			<index name="oauth_access_tokens_user_id" columns="user_id" />
 			<index name="oauth_access_tokens_client_id" columns="client_id" />
@@ -20,7 +20,7 @@
 				<join-column name="user_id" referenced-column-name="id" />
 			</join-columns>
 		</many-to-one>
-		<many-to-one field="client" target-entity="VVK\Oauth\Entities\Client" fetch="LAZY">
+		<many-to-one field="client" target-entity="OrmBackend\Oauth\Entities\Client" fetch="LAZY">
 			<join-columns>
 				<join-column name="client_id" referenced-column-name="id" nullable="false" />
 			</join-columns>

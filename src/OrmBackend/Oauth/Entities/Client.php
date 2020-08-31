@@ -1,6 +1,6 @@
 <?php
 
-namespace VVK\Oauth\Entities;
+namespace OrmBackend\Oauth\Entities;
 
 /**
  * @author Vitaliy Kovalenko vvk@kola.cloud

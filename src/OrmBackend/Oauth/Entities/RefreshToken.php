@@ -1,14 +1,14 @@
 <?php
 
-namespace VVK\Oauth\Entities;
+namespace OrmBackend\Oauth\Entities;
 
 /**
  * @author Vitaliy Kovalenko vvk@kola.cloud
  *
  */
-class AuthCode extends OauthEntity
+class RefreshToken extends OauthEntity
 {
-    
+
     /**
      *
      * @var string
@@ -16,19 +16,9 @@ class AuthCode extends OauthEntity
     protected $id;
     
     /**
-     * @var \App\Model\User
+     * @var integer
      */
-    protected $user;
-
-    /**
-     * @var \VVK\Oauth\Entities\Client
-     */
-    protected $client;
-
-    /**
-     * @var string
-     */
-    protected $scopes;
+    protected $accessTokenId;
 
     /**
      * @var boolean
@@ -39,45 +29,13 @@ class AuthCode extends OauthEntity
      * @var \Carbon\Carbon
      */
     protected $expiresAt;
-    
-    /**
-     * @return \App\Model\User
-     */
-    public function getUser()
-    {
-        return $this->user;
-    }
 
     /**
-     * @return \VVK\Oauth\Entities\Client
+     * @return integer
      */
-    public function getClient()
+    public function getAccessTokenId()
     {
-        return $this->client;
-    }
-
-    /**
-     * @param \App\Model\User $user
-     */
-    public function setUser($user)
-    {
-        $this->user = $user;
-    }
-
-    /**
-     * @param \VVK\Oauth\Entities\Client $client
-     */
-    public function setClient($client)
-    {
-        $this->client = $client;
-    }
-
-    /**
-     * @return string
-     */
-    public function getScopes()
-    {
-        return $this->scopes;
+        return $this->accessTokenId;
     }
 
     /**
@@ -97,11 +55,11 @@ class AuthCode extends OauthEntity
     }
 
     /**
-     * @param string $scopes
+     * @param integer $accessTokenId
      */
-    public function setScopes($scopes)
+    public function setAccessTokenId($accessTokenId)
     {
-        $this->scopes = $scopes;
+        $this->accessTokenId = $accessTokenId;
     }
 
     /**
@@ -124,7 +82,7 @@ class AuthCode extends OauthEntity
     {
         return [];
     }
-
+    
     public function getModelValidationRules()
     {
         return [];

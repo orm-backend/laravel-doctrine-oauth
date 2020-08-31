@@ -1,10 +1,10 @@
 {
-	"name" : "vvk/laravel-doctrine-oauth",
+	"name" : "orm-backend/laravel-doctrine-oauth",
 	"description" : "Laravel passport integration.",
 	"type" : "library",
 	"license" : "MIT",
 	"keywords" : [
-		"vvk",
+		"orm-backend",
 		"laravel-doctrine",
 		"oauth"
 	],
@@ -18,14 +18,14 @@
 	},
 	"autoload" : {
 		"psr-4" : {
-			"VVK\\Oauth\\" : "src/VVK/Oauth/",
-			"VVK\\Admin\\" : "src/VVK/Admin/"
+			"OrmBackend\\Oauth\\" : "src/OrmBackend/Oauth/",
+			"OrmBackend\\Admin\\" : "src/OrmBackend/Admin/"
 		}
 	},
 	"extra" : {
 		"laravel" : {
 			"providers" : [
-				"VVK\\Oauth\\PackageServiceProvider"
+				"OrmBackend\\Oauth\\PackageServiceProvider"
 			]
 		}
 	}

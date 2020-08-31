@@ -1,13 +1,12 @@
 <?php
 
-namespace VVK\Oauth\Model;
-
+namespace OrmBackend\Oauth\Model;
 
 /**
  * @author Vitaliy Kovalenko vvk@kola.cloud
  *
  */
-class AccessToken extends \Laravel\Passport\Token
+class PersonalAccessClient extends \Laravel\Passport\PersonalAccessClient
 {
     
     /**
@@ -15,11 +14,11 @@ class AccessToken extends \Laravel\Passport\Token
      *
      * @var string
      */
-    protected $table = 'd_oauth_access_tokens';
-    
+    protected $table = 'd_oauth_personal_access_clients';
+
     public static function booted()
     {
-        self::creating(function($model) {
+        self::creating(function($model){
             if (app()->runningInConsole()) {
                 $model->created_by = 1;
             } else {
@@ -29,5 +28,5 @@ class AccessToken extends \Laravel\Passport\Token
             $model->created_at = now();
         });
     }
-
+    
 }

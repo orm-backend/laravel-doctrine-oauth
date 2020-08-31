@@ -1,16 +1,16 @@
 <?php
 
-namespace VVK\Oauth\Controllers;
+namespace OrmBackend\Oauth\Controllers;
 
 use App\Model\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
-use VVK\Admin\Controllers\AdminController;
-use VVK\Utility\Helper;
-use VVK\Web\Fields\FieldContainer;
-use VVK\Oauth\Entities\Client;
-use VVK\Oauth\Entities\PersonalAccessClient;
+use OrmBackend\Admin\Controllers\AdminController;
+use OrmBackend\Utility\Helper;
+use OrmBackend\Web\Fields\FieldContainer;
+use OrmBackend\Oauth\Entities\Client;
+use OrmBackend\Oauth\Entities\PersonalAccessClient;
 
 class OauthController extends AdminController
 {
@@ -18,7 +18,7 @@ class OauthController extends AdminController
     /**
      * 
      * {@inheritDoc}
-     * @see \VVK\Admin\Controllers\AdminController::store($request, $classUrlName, $group)
+     * @see \OrmBackend\Admin\Controllers\AdminController::store($request, $classUrlName, $group)
      */
     public function store(Request $request, string $classUrlName, string $group)
     {

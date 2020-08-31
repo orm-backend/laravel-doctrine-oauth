@@ -1,12 +1,13 @@
 <?php
 
-namespace VVK\Oauth\Model;
+namespace OrmBackend\Oauth\Model;
+
 
 /**
  * @author Vitaliy Kovalenko vvk@kola.cloud
  *
  */
-class RefreshToken extends \Laravel\Passport\RefreshToken
+class AccessToken extends \Laravel\Passport\Token
 {
     
     /**
@@ -14,8 +15,8 @@ class RefreshToken extends \Laravel\Passport\RefreshToken
      *
      * @var string
      */
-    protected $table = 'd_oauth_refresh_tokens';
-
+    protected $table = 'd_oauth_access_tokens';
+    
     public static function booted()
     {
         self::creating(function($model) {
@@ -28,5 +29,5 @@ class RefreshToken extends \Laravel\Passport\RefreshToken
             $model->created_at = now();
         });
     }
-    
+
 }

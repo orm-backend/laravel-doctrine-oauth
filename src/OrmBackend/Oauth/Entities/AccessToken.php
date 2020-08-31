@@ -1,6 +1,6 @@
 <?php
 
-namespace VVK\Oauth\Entities;
+namespace OrmBackend\Oauth\Entities;
 
 /**
  * @author Vitaliy Kovalenko vvk@kola.cloud
@@ -21,7 +21,7 @@ class AccessToken extends OauthEntity
     protected $user;
 
     /**
-     * @var \VVK\Oauth\Entities\Client
+     * @var \OrmBackend\Oauth\Entities\Client
      */
     protected $client;
 
@@ -54,7 +54,7 @@ class AccessToken extends OauthEntity
     }
 
     /**
-     * @return \VVK\Oauth\Entities\Client
+     * @return \OrmBackend\Oauth\Entities\Client
      */
     public function getClient()
     {
@@ -70,7 +70,7 @@ class AccessToken extends OauthEntity
     }
 
     /**
-     * @param \VVK\Oauth\Entities\Client $client
+     * @param \OrmBackend\Oauth\Entities\Client $client
      */
     public function setClient($client)
     {

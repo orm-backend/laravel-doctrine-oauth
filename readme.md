@@ -22,7 +22,7 @@ _In my opinion, for the first-part mobile and SPA applications, when multi-facto
 
 ## Dependencies
 
- * [vvk/laravel-doctrine-admin](https://github.com/vvk-kolsky/laravel-doctrine-admin)
+ * [orm-backend/laravel-doctrine-admin](https://github.com/vvk-kolsky/laravel-doctrine-admin)
 
 ## Install
 
@@ -44,7 +44,7 @@ _In my opinion, for the first-part mobile and SPA applications, when multi-facto
 * Install packages
 
 ```BASH
-composer require vvk/laravel-doctrine-oauth
+composer require orm-backend/laravel-doctrine-oauth
 ```
 
 ## Setting up

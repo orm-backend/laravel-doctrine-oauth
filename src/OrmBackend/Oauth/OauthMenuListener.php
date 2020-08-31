@@ -1,25 +1,25 @@
 <?php
-namespace VVK\Oauth;
+namespace OrmBackend\Oauth;
 
 use Doctrine\ORM\EntityManager;
 use Illuminate\Support\Facades\Gate;
-use VVK\Oauth\Entities\AccessToken;
-use VVK\Oauth\Entities\AuthCode;
-use VVK\Oauth\Entities\Client;
-use VVK\Oauth\Entities\PersonalAccessClient;
-use VVK\Oauth\Entities\RefreshToken;
-use VVK\Utility\Helper;
-use VVK\Utility\Str;
-use VVK\Web\Events\BeforMenu;
-use VVK\Web\Menu\Menu;
-use VVK\Web\Menu\MenuFactory;
+use OrmBackend\Oauth\Entities\AccessToken;
+use OrmBackend\Oauth\Entities\AuthCode;
+use OrmBackend\Oauth\Entities\Client;
+use OrmBackend\Oauth\Entities\PersonalAccessClient;
+use OrmBackend\Oauth\Entities\RefreshToken;
+use OrmBackend\Utility\Helper;
+use OrmBackend\Utility\Str;
+use OrmBackend\Web\Events\BeforMenu;
+use OrmBackend\Web\Menu\Menu;
+use OrmBackend\Web\Menu\MenuFactory;
 
 class OauthMenuListener
 {
     
     /**
      * 
-     * @var \VVK\Web\Menu\MenuFactory
+     * @var \OrmBackend\Web\Menu\MenuFactory
      */
     protected $factory;
     
@@ -72,7 +72,7 @@ class OauthMenuListener
      * @param string $currentRoute
      * @param string $activeGroup
      * @param string $activeModel
-     * @return NULL|\VVK\Web\Menu\Menu
+     * @return NULL|\OrmBackend\Web\Menu\Menu
      */
     protected function getMenuForClass(string $className, string $classUrlName, string $currentRoute, string $activeModel = null)
     {

@@ -1,7 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
-use VVK\Admin\Controllers\SettingsController;
-use VVK\Oauth\Controllers\OauthController;
+use OrmBackend\Admin\Controllers\SettingsController;
+use OrmBackend\Oauth\Controllers\OauthController;
 
 Route::group([
     'prefix' => '/admin/oauth/{model}',

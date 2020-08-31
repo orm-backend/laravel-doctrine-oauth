@@ -1,12 +1,12 @@
 <?php
 
-namespace VVK\Oauth\Model;
+namespace OrmBackend\Oauth\Model;
 
 /**
  * @author Vitaliy Kovalenko vvk@kola.cloud
  *
  */
-class Client extends \Laravel\Passport\Client
+class RefreshToken extends \Laravel\Passport\RefreshToken
 {
     
     /**
@@ -14,7 +14,7 @@ class Client extends \Laravel\Passport\Client
      *
      * @var string
      */
-    protected $table = 'd_oauth_clients';
+    protected $table = 'd_oauth_refresh_tokens';
 
     public static function booted()
     {
