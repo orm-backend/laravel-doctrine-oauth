@@ -29,7 +29,7 @@ class PackageServiceProvider extends ServiceProvider
         $this->bootModel(
             $manager,
             [
-                base_path('vendor/vvk/laravel-doctrine-oauth/src/OrmBackend/Oauth/Entities') => 'OrmBackend\Oauth\Entities'
+                base_path('vendor/orm-backend/laravel-doctrine-oauth/src/OrmBackend/Oauth/Entities') => 'OrmBackend\Oauth\Entities'
             ],
             'OrmBackend\Oauth\Entities'
         );
