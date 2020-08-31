@@ -22,7 +22,7 @@ _In my opinion, for the first-part mobile and SPA applications, when multi-facto
 
 ## Dependencies
 
- * [orm-backend/laravel-doctrine-admin](https://github.com/vvk-kolsky/laravel-doctrine-admin)
+ * [orm-backend/laravel-doctrine-admin](https://github.com/orm-backend/laravel-doctrine-admin)
 
 ## Install
 
@@ -32,11 +32,11 @@ _In my opinion, for the first-part mobile and SPA applications, when multi-facto
 "repositories": [
 	{
        "type": "vcs",
-       "url": "git@github.com:vvk-kolsky/laravel-doctrine.git"
+       "url": "git@github.com:orm-backend/laravel-doctrine.git"
     },
     {
        "type": "vcs",
-       "url": "git@github.com:vvk-kolsky/laravel-doctrine-oauth.git"
+       "url": "git@github.com:orm-backend/laravel-doctrine-oauth.git"
     }
 ]
 ```
