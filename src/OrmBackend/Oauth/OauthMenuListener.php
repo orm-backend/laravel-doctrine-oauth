@@ -100,7 +100,7 @@ class OauthMenuListener
             ]));
         }
         
-        if (Gate::inspect('create', $classUrlName)->allowed()) {
+        if (Client::class == $className && Gate::inspect('create', $classUrlName)->allowed()) {
             $menu->addSubmenuElement('create', new Menu([
                 'url' => route('admin.oauth.create', [$classUrlName], false),
                 'name' => __('Create'),

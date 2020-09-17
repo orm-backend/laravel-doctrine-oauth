@@ -55,7 +55,7 @@ composer require orm-backend/laravel-doctrine-oauth
 'views' => [
 	***
 	
-	'it_aces-oauth-entities-client' => [
+	'orm_backend-oauth-entities-client' => [
         'create' => 'oauth::client.create'
     ],
 ]
